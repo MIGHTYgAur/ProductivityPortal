@@ -1,10 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Hind&display=swap");
 :root {
-    --bg-color: #373434;
-    --font-color: #d9d9d9;
+    --bgcolor: #0D0404;
+    --fontcolor:#FFF2F2;
     --font: "Lato", sans-serif;
-}
+  }
+
 .tdapp {
     width: 100%;
     /* height:5rem; */
@@ -15,7 +16,7 @@
     border-radius: 1.5rem;
 }
 .tdapp h2 {
-    color: #373434;
+    color: var(--bgcolor);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -32,7 +33,7 @@
     border-radius: 40px;
     padding-left: 20px;
     margin-bottom: 0.7rem;
-    background: #cfc4c4;
+    background: var(--fontcolor);
     box-shadow: 2px 2px 3px 1.5px  #ded0d027;
     font-family: "Montserrat", sans-serif;
 }
@@ -52,7 +53,7 @@
       padding: 16px 18px;
       cursor: pointer;
       border-radius: 40px;
-      background: #373434;
+      background:var(--bgcolor);
 }
 .to-do-btn img{
     width: 30px;
@@ -95,12 +96,12 @@ ul li.tick::before {
 }
 ul li cross{
       position: absolute;
-      right: 0;
+      right: 5px;
       top: 5px;
       width: 40px;
       height: 40px;
       font-size: 22px;
-      color: #373434;
+      color: var(--bgcolor);
       line-height: 40px;
       text-align: center;
 }
@@ -109,6 +110,6 @@ ul li cross:hover{
       outline: none;
       cursor: pointer;
       border-radius: 50%;
-      background: #edeef0
+      background:var(--fontcolor);
 }
   

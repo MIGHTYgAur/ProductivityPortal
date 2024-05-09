@@ -31,11 +31,11 @@ function pauseToResume(){
     isPause = !isPause;
     if(isPause){
         clearInterval(timer);
-        playButton.src="/public/resume.png";
+        playButton.src="/public/resume1.png";
     }
     else{
         startTimer();
-        playButton.src="/public/pause.png";
+        playButton.src="/public/pause1.png";
     }
 }
 function resetTimer(){
@@ -71,8 +71,9 @@ function longBreak(){
         startTimer();
 }
 function pomodoro(){
+        document.getElementById("pomoBtn").style.backgroundColor=""
         const clock=document.getElementById("clockCircle");
-        clock.style.backgroundColor = "#373434";
+        clock.style.backgroundColor = "#0D0404";
         clearInterval(timer);
         resetTimer();
 
