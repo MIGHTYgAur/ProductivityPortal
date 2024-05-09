@@ -13,14 +13,34 @@
     <link href="style.css" rel="stylesheet" />
     <link href="responsive.css" rel="stylesheet" />
     <link href="todo.css" rel="stylesheet" />
+    <link href="settings.css" rel="stylesheet"/>
     <link rel="icon" type="image/x-icon" href="/public/icons/favicon.ico" />
   </head>
 
 
 <body>
     <header>
+        <h1>Productivity Portal</h1>
         <div id="settings">
-            <img src="">
+            <!-- <img src=""> -->
+            <svg id="settings" width="35" height="35" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33.7516 0L32.5357 12.0709C30.0515 12.7331 27.6968 13.7109 25.5234 14.9707L16.1313 7.2952L7.2952 16.1313L14.9707 25.5266C13.6961 27.7253 12.7188 30.0833 12.0643 32.539L0 33.7516V46.2516L12.0709 47.4642C12.7327 49.9471 13.7119 52.3009 14.9707 54.4733L7.2952 63.8687L16.1313 72.7048L25.5267 65.0292C27.699 66.288 30.0529 67.2673 32.5357 67.9291L33.7484 80H46.2484L47.461 67.9356C49.9167 67.2812 52.2747 66.3039 54.4733 65.0292L63.8687 72.7048L72.7049 63.8687L65.0292 54.4765C66.289 52.3031 67.2669 49.9485 67.9291 47.4642L80 46.2516V33.7516L67.9356 32.539C67.2816 30.0822 66.3042 27.723 65.0292 25.5235L72.7048 16.1314L63.8687 7.2952L54.4765 14.9707C52.277 13.6957 49.9178 12.7184 47.461 12.0643L46.2484 0H33.7516ZM40 28.4363C46.3858 28.4363 51.5637 33.6142 51.5637 40C51.5637 46.3858 46.3858 51.5637 40 51.5637C33.6142 51.5637 28.4363 46.3858 28.4363 40C28.4363 33.6142 33.6142 28.4363 40 28.4363Z" fill="#FFF2F2"/>
+                </svg>
+            <!-- settings page initally hidden-->
+                <div class="form-container" id="form-container">
+                    <form>
+                        <label for="pomodoro-length">Pomodoro Length (minutes):</label>
+                        <input type="number" id="pomodoro-length" name="pomodoro-length" min="25" value="25">
+                        <br><br>
+                        <label for="short-break-length">Short Break Length (minutes):</label>
+                        <input type="number" id="short-break-length" name="short-break-length" min="5" value="5">
+                        <br><br>
+                        <label for="long-break-length">Long Break Length (minutes):</label>
+                        <input type="number" id="long-break-length" name="long-break-length" min="15" value="15">
+                        <br><br>
+                        <button type="submit" onsubmit="handleFormSubmission()">Submit</button>
+                    </form>
+                </div>  
         </div>
     </header>
     <div class="container" >
@@ -86,7 +106,7 @@
     <script src="pomo.js"></script>
     <script src="bootstrap-5.3.3-dist\js\bootstrap.min.js"></script>
     <script src="todo.js"></script>
-
+    <script src="setting.js"></script>
     <script src="music.js"></script>
     
 </body>

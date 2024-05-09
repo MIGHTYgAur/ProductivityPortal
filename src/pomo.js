@@ -71,13 +71,25 @@ function longBreak(){
         startTimer();
 }
 function pomodoro(){
-        document.getElementById("pomoBtn").style.backgroundColor=""
         const clock=document.getElementById("clockCircle");
         clock.style.backgroundColor = "#0D0404";
         clearInterval(timer);
         resetTimer();
+}
+
+function handleFormSubmission(){
+   const pomodoroLength = document.getElementById("pomodoro-length").value;
+   const shortBreakLength = document.getElementById("short-break-length").value;
+   const longBreakLength = document.getElementById("long-break-length").value;
+
+   clearInterval(timer);
+   minutes = pomodoroLength;
+   shortBreak(shortBreakLength);
+   longBreak(longBreakLength);
 
 }
+
+
 playButton.addEventListener("click",pauseToResume);
 resetButton.addEventListener("click",resetTimer);
 

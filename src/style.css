@@ -17,12 +17,29 @@ html {
   background-color:var(--bgcolor);
   color: var(--fontcolor);
 }
+
 header{
+
   height:9vh;
-  background-color: var(--fontcolor);
-  margin-bottom:1.5rem;
+  background-color: #330f0f ;
+  box-shadow:#fff2f24e 0px 3px 8px;
+  position:relative;
+
+}
+header h1{
+  font-family:var(--font);
+  position:absolute;
+  left:1.5%;
+  top:15%;
+  display:inline-block;
+}
+#settings{
+  position:absolute;
+  right:2%;
+  top:22%;
 }
 .container {
+  padding-top:3rem;
   height: 100%;
   width: 100%;
 }
