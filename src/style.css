@@ -16,6 +16,7 @@ html {
   width: 100%;
   background-color:var(--bgcolor);
   color: var(--fontcolor);
+  scroll-behavior: smooth;
 }
 
 header{
@@ -58,6 +59,7 @@ header h1{
   justify-content: center;
   align-items: center;
   gap: 5rem;
+
 }
 .pomo-btn {
   width: 130px;
@@ -69,6 +71,7 @@ header h1{
   font-size: 1rem;
   font-weight: bold;
   transition: 0.4s ease;
+  cursor:pointer;
 }
 .pomo-btn:hover{
   background-color: var(--fontcolor);
