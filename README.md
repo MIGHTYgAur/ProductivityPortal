@@ -1,5 +1,5 @@
 # Productivity Portal
-Welcome to the Productivity Portal! This web application aims to boost your productivity by providing essential tools like a Pomodoro timer, a to-do list, and Spotify integration for your focus sessions.
+Welcome to the Productivity Portal! This web application aims to boost your productivity by providing essential tools like a Pomodoro timer, a to-do list, and music features for your focus sessions.
 
 ## Features
 Pomodoro Timer
