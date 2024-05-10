@@ -1,19 +1,39 @@
 let timer;
-let minutes=25;
+let minutes;
 let seconds=0;
 let isPause=true;
+var pomodoroLength=25;
+var shortBreakLength=5;
+var longBreakLength=15;
+
+
 const playButton=document.getElementById("play-btn")
 const resetButton=document.getElementById("reset-btn");
 
+function handleFormSubmission(event){
+    event.preventDefault(event);
+    pomodoroLength = parseInt(document.getElementById("pomodoro-length").value);
+    shortBreakLength = parseInt(document.getElementById("short-break-length").value);
+    longBreakLength = parseInt(document.getElementById("long-break-length").value);
+    hideForm();
+    pomodoro();
+ }
+ 
 function pomodoro(){
-    document.getElementById("pomoBtn").click();
+    clearInterval(timer);
+    document.getElementById("pomoBtn1").style.backgroundColor="#FFF2F2";
+    document.getElementById("pomoBtn1").style.color="#0D0404";
+    document.getElementById("pomoBtn2").style.backgroundColor="#0D0404";
+    document.getElementById("pomoBtn2").style.color="#FFF2F2";
+    document.getElementById("pomoBtn3").style.backgroundColor="#0D0404";
+    document.getElementById("pomoBtn3").style.color="#FFF2F2";
+    minutes=pomodoroLength;
     const clock=document.getElementById("clockCircle");
     clock.style.backgroundColor = "#0D0404";
-    clearInterval(timer);
     resetTimer();
 
 }
-pomodoro();
+
 function startTimer(){
     timer = setInterval(updateTimer,1000);
 }
@@ -50,7 +70,7 @@ function pauseToResume(){
 }
 function resetTimer(){
     clearInterval(timer);
-    minutes=25;
+    minutes=pomodoroLength;
     seconds=0;
     // isPause = !isPause;
     // if(isPause){
@@ -62,20 +82,32 @@ function resetTimer(){
         startTimer();
         playButton.src="/public/pause1.png";
      }*/
+     document.getElementById("pomoBtn1").style.backgroundColor="#FFF2F2";
+     document.getElementById("pomoBtn1").style.color="#0D0404";
+     document.getElementById("pomoBtn2").style.backgroundColor="#0D0404";
+     document.getElementById("pomoBtn2").style.color="#FFF2F2";
+     document.getElementById("pomoBtn3").style.backgroundColor="#0D0404";
     const clock=document.getElementById("clockCircle");
     clock.style.backgroundColor = "#0D0404";
     const timeElement=document.getElementById("time");
+    
     timeElement.textContent=formatTime(minutes,seconds);
     isPause=false;
     playButton.src="/public/resume1.png";
     clearInterval(timer);
-    // startTimer();
 }
 function shortBreak(){
         clearInterval(timer);
         const clock=document.getElementById("clockCircle");
-        clock.style.backgroundColor = "rgb(238, 87, 87)";
-        minutes=5;
+        clock.style.backgroundColor = "#FAAD07";
+        document.getElementById("pomoBtn1").style.backgroundColor="#0D0404";
+        document.getElementById("pomoBtn1").style.color="#FFF2F2";
+        document.getElementById("pomoBtn2").style.backgroundColor="#FFF2F2";
+        document.getElementById("pomoBtn2").style.color="#0D0404";
+        document.getElementById("pomoBtn3").style.backgroundColor="#0D0404";
+        document.getElementById("pomoBtn3").style.color="#FFF2F2";
+
+        minutes=shortBreakLength;
         seconds=0;
         const timeElement=document.getElementById("time");
         timeElement.textContent = formatTime(minutes,seconds);
@@ -87,29 +119,37 @@ function longBreak(){
 
         clearInterval(timer);
         const clock=document.getElementById("clockCircle");
-        clock.style.backgroundColor = "rgb(238, 87, 87)";
+        clock.style.backgroundColor = "#E85D04";
+        document.getElementById("pomoBtn1").style.backgroundColor="#0D0404";
+        document.getElementById("pomoBtn1").style.color="#FFF2F2";
+        document.getElementById("pomoBtn3").style.backgroundColor="#FFF2F2";
+        document.getElementById("pomoBtn3").style.color="#0D0404";
+        document.getElementById("pomoBtn2").style.backgroundColor="#0D0404";
+        document.getElementById("pomoBtn2").style.color="#FFF2F2";
+
         clearInterval(timer);
-        minutes=15;
+        minutes=longBreakLength;
         seconds=0;
         const timeElement=document.getElementById("time");
         timeElement.textContent = formatTime(minutes,seconds);
         playButton.src="/public/resume1.png";
         clearInterval(timer);
-      
 }
 
-function handleFormSubmission(){
-   pomodoroLength = document.getElementById("pomodoro-length").value;
-   shortBreakLength = document.getElementById("short-break-length").value;
-   const longBreakLength = document.getElementById("long-break-length").value;
+//form handling part
+const showFormBtn = document.getElementById("settings");
+const formContainer = document.getElementById("form-container");
 
-   clearInterval(timer);
-   minutes = pomodoroLength;
-   shortBreak(shortBreakLength);
-   longBreak(longBreakLength);
 
+showFormBtn.addEventListener("click", function() {
+    formContainer.style.display = "block";
+});
+
+function hideForm() {
+   formContainer.style.display = "none";
 }
 
 
+pomodoro();
 playButton.addEventListener("click",pauseToResume);
 resetButton.addEventListener("click",resetTimer);

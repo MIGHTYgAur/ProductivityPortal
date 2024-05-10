@@ -12,9 +12,10 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: #f2f2f2;
-            padding: 20px;
-            border-radius: 5px;
+            background-color: #0D0404;
+            color: #FFF2F2;
+            padding: 40px;
+            border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             z-index: 1;
         }
@@ -29,11 +30,29 @@
             border-radius: 4px;
             cursor: pointer;
         }
-        /* Styling for the main content */
-        .content {
+        #show-form-btn:hover {
+            background-color: #45a049;
+        }
+        #show-form-btn:active {
+            background-color: #3e8e41;
+        }
+        /* Centering the submit button */
+        .form-container button[type="submit"] {
             display: block;
-            margin: 0 auto;
-            text-align: center;
+            margin: 20px auto 0;
+            padding: 15px 15px;
+            background-color: var(--fontcolor);
+            color: var(--fontcolor);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button[type="submit"]:hover {
+            background-color: #EEE;
+            color: #0D0404;
+        }
+        .form-container button[type="submit"]:active {
+            background-color: #DDD;
         }
     </style>
 </head>
@@ -47,7 +66,7 @@
 
     <!-- Form initially hidden -->
     <div class="form-container" id="form-container">
-        <form action="#" method="post">
+        <form>
             <label for="pomodoro-length">Pomodoro Length (minutes):</label>
             <input type="number" id="pomodoro-length" name="pomodoro-length" min="1" value="25">
             <br><br>
@@ -66,11 +85,8 @@
         const showFormBtn = document.getElementById("show-form-btn");
         const formContainer = document.getElementById("form-container");
 
-        // Add event listener to the button
         showFormBtn.addEventListener("click", function() {
-            // Hide the main content
             document.querySelector(".content").style.display = "none";
-            // Show the form container
             formContainer.style.display = "block";
         });
     </script>

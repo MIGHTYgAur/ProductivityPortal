@@ -39,6 +39,9 @@ header h1{
   right:2%;
   top:22%;
 }
+#settings:hover{
+  transform:rotateY('45deg');
+}
 .container {
   padding-top:3rem;
   height: 100%;
@@ -62,13 +65,14 @@ header h1{
 
 }
 .pomo-btn {
-  width: 130px;
-  height: 40px;
+  width: 10rem;
+  height: 3rem;
   background-color: var(--bgcolor);
   border: var(--fontcolor) 3px solid;
+  border-radius:4px;
   color: var(--fontcolor);
   font-family: var(--font);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   transition: 0.4s ease;
   cursor:pointer;
@@ -103,8 +107,8 @@ header h1{
 .control-buttons {
   display: grid;
   align-items: center;
-  grid-template-columns: 25px 25px;
-  gap: 25px;
+  grid-template-columns: 2rem 2rem;
+  gap: 2rem;
 }
 #play-btn {
   width: 25px;
