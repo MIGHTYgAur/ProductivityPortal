@@ -17,8 +17,8 @@ Stay organized and manage your tasks efficiently with our built-in to-do list fe
 -> Mark tasks as completed to track your progress.
 -> Prioritize tasks with drag-and-drop functionality (BETA).
 
-### Spotify Integration
-Enhance your focus sessions with your favorite music playlists from Spotify. Simply paste your Spotify playlist link, and enjoy seamless integration while you work (BETA).
+### Music Integration
+Enhance your focus sessions with the music available in Productivity Portal.
 ## Technologies Used
 Html : Building the structure of the ProductivityPortal
 
