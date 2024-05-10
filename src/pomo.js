@@ -1,9 +1,19 @@
 let timer;
 let minutes=25;
 let seconds=0;
-let isPause=false;
+let isPause=true;
 const playButton=document.getElementById("play-btn")
 const resetButton=document.getElementById("reset-btn");
+
+function pomodoro(){
+    document.getElementById("pomoBtn").click();
+    const clock=document.getElementById("clockCircle");
+    clock.style.backgroundColor = "#0D0404";
+    clearInterval(timer);
+    resetTimer();
+
+}
+pomodoro();
 function startTimer(){
     timer = setInterval(updateTimer,1000);
 }
@@ -42,11 +52,24 @@ function resetTimer(){
     clearInterval(timer);
     minutes=25;
     seconds=0;
+    // isPause = !isPause;
+    // if(isPause){
+    //     clearInterval(timer);
+    //     playButton.src="/public/resume1.png";
+    // }
+    /* else
+    
+        startTimer();
+        playButton.src="/public/pause1.png";
+     }*/
+    const clock=document.getElementById("clockCircle");
+    clock.style.backgroundColor = "#0D0404";
     const timeElement=document.getElementById("time");
     timeElement.textContent=formatTime(minutes,seconds);
     isPause=false;
-    playButton.src="/public/pause.png";
-    startTimer();
+    playButton.src="/public/resume1.png";
+    clearInterval(timer);
+    // startTimer();
 }
 function shortBreak(){
         clearInterval(timer);
@@ -56,7 +79,9 @@ function shortBreak(){
         seconds=0;
         const timeElement=document.getElementById("time");
         timeElement.textContent = formatTime(minutes,seconds);
-        startTimer();
+        playButton.src="/public/resume1.png";
+        clearInterval(timer);
+       
 }
 function longBreak(){
 
@@ -68,18 +93,14 @@ function longBreak(){
         seconds=0;
         const timeElement=document.getElementById("time");
         timeElement.textContent = formatTime(minutes,seconds);
-        startTimer();
-}
-function pomodoro(){
-        const clock=document.getElementById("clockCircle");
-        clock.style.backgroundColor = "#0D0404";
+        playButton.src="/public/resume1.png";
         clearInterval(timer);
-        resetTimer();
+      
 }
 
 function handleFormSubmission(){
-   const pomodoroLength = document.getElementById("pomodoro-length").value;
-   const shortBreakLength = document.getElementById("short-break-length").value;
+   pomodoroLength = document.getElementById("pomodoro-length").value;
+   shortBreakLength = document.getElementById("short-break-length").value;
    const longBreakLength = document.getElementById("long-break-length").value;
 
    clearInterval(timer);
@@ -92,5 +113,3 @@ function handleFormSubmission(){
 
 playButton.addEventListener("click",pauseToResume);
 resetButton.addEventListener("click",resetTimer);
-
-startTimer();
