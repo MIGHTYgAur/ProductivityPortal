@@ -87,6 +87,8 @@ function resetTimer(){
      document.getElementById("pomoBtn2").style.backgroundColor="#0D0404";
      document.getElementById("pomoBtn2").style.color="#FFF2F2";
      document.getElementById("pomoBtn3").style.backgroundColor="#0D0404";
+     document.getElementById("pomoBtn3").style.color="#FFF2F2";
+
     const clock=document.getElementById("clockCircle");
     clock.style.backgroundColor = "#0D0404";
     const timeElement=document.getElementById("time");

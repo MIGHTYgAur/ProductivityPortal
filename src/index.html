@@ -65,7 +65,7 @@
       </div>
       <!--todo list-->
       <div class="tdapp">
-        <!-- <h2>To-Do List <img src="/public/to-do-list.png"></h2> -->
+      
         <div class="radioadd">
           <input type="text" id="inpbar" placeholder="Add Task" />
           <button class="to-do-btn" onclick="taskadd()">
@@ -76,42 +76,37 @@
       </div>
       <div class="music-play">
         <div class="search-music">
-          <label for="add-music">
-            <input
-              id="add-music"
-              type="text"
-              placeholder="Paste your Spotify playlist link !"
-            />
-          </label>
+            <select id="audioSelect">
+              <option value="">Select Audio</option>
+              <option value="/public/audioplali/lofi.mp3">lofi</option>
+              <option value="/public/audioplali/somberclassical1.mp3">classical</option>
+            </select>
+            
         </div>
-        <div id="music-info">
-          <svg
-            class="now-playing-icon"
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M8 16C3.582 16 0 12.418 0 8C0 3.582 3.582 0 8 0C12.418 0 16 3.582 16 8C16 12.418 12.418 16 8 16ZM8 4C5.791 4 4 5.791 4 8C4 10.209 5.791 12 8 12C10.209 12 12 10.209 12 8C12 5.791 10.209 4 8 4Z"
-              fill="#D9D9D9"
-            />
-          </svg>
+        <div id="music-info"> 
+            <img id="prevbtn" src="/public/prev.png">    
+            <img id="play-pause" src="/public/play.png">
+            <img id="nextbtn" src="/public/next.png">
+            <audio id="audioPlayer" src="" controls>
+              Your browser does not support the audio element.
+            </audio>
           <h3></h3>
         </div>
       </div>
     </div>
 
+
+    <footer>
+      <p>&copy; 2024 Productivity Portal. All rights reserved.</p>
+    </footer>
+    
     <script src="pomo.js"></script>
     <script src="bootstrap-5.3.3-dist\js\bootstrap.min.js"></script>
     <script src="todo.js"></script>
     <script src="setting.js"></script>
     <script src="music.js"></script>
-    
 </body>
 
-</html>
-  </body>
+
 </html>
 
