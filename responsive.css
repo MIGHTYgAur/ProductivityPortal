@@ -10,28 +10,38 @@
     
     .control-buttons {
         grid-template-columns: 20px 20px;
-        gap: 20px;
+        gap: 1.8rem;
     }
     .music-play{
-        display:flex;
+        gap:60px;
     }
-    #add-music , #music-info{
-        width:200px;
-        height:1.625rem;
-        border-radius:0.9rem;
-        padding:2px;
+    .search-music , #music-info{
+        width:13.5rem;
+        height:1.8rem;
+        border-radius:0.65rem;
+        /* padding:2px; */
+
+    }
+    #music-info{
         padding-left:0.5rem;
     }
 }
 
 @media only screen and (max-width: 576px) {
-
+    header h1{
+        left:3%;
+        font-size:1.7rem;
+        top:17%;
+    }
+    .music-play{
+        gap:42px;
+    }
     .pomo-buttons {
-        gap: 1rem;
+        gap: 1.7rem;
     }
     
     .pomo-btn {
-        width: 110px;
+        width: 120px;
         height: 35px;
     }
     
@@ -41,20 +51,35 @@
     }
     
     .clock h3 {
-        font-size: 1.5rem;
-        left:38%;
+        font-size: 2.4rem;
+        left:32%;
+    }
+   
+    .radioadd{
+
     }
 }
 @media only screen and (max-width: 480px) {
+    header h1{
+        left:6%;
+        font-size:1.5rem;
+        top:20%;
+    }
+    #settings{
+        height:28px;
+        width:28px;
+        top:25%;
+    }
     .pomo-buttons {
         gap: 1rem;
 
     }
-
     .pomo-btn {
-        width: 100px;
-        height: 30px;
+
+        width:100px;
+        height: 36px;
         border-width: 0.1rem;
+        font-size:1.05rem;
     }
 
     .pomo-clock {
@@ -63,17 +88,25 @@
     }
 
     .clock h3 {
-        font-size: 1.8rem;
+        font-size: 2rem;
         left:32%;
     }
     .control-buttons{
-        gap:1rem;
+        gap:1.8rem;
     }
     .music-play {
         flex-direction: column;
         gap: 1rem;
+        justify-content: center;
+        align-items: center;
     }
-    #add-music,#music-info{
-        width:250px;
+    .search-music,#music-info{
+        width:20rem;
+        height:1.8rem;
+        border-radius:0.65rem;
+      
+    }
+    #audioSelect{
+        height:1.8rem;
     }
 }

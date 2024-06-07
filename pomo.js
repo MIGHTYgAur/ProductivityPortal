@@ -142,14 +142,15 @@ function longBreak(){
 const showFormBtn = document.getElementById("settings");
 const formContainer = document.getElementById("form-container");
 
-
+let click=0;
 showFormBtn.addEventListener("click", function() {
+    click=click+1;
+    if(click === 2){
+        formContainer.style.display = "none";
+        click=0;
+    }
     formContainer.style.display = "block";
 });
-
-function hideForm() {
-   formContainer.style.display = "none";
-}
 
 
 pomodoro();

@@ -52,7 +52,7 @@
 .to-do-btn{
       border: none;
       outline: none;
-      padding: 16px 18px;
+      padding: 14px 16px;
       cursor: pointer;
       border-radius: 40px;
       background:var(--bgcolor);
@@ -115,3 +115,20 @@ ul li cross:hover{
       background:var(--fontcolor);
 }
   
+@media only screen and (max-width: 576px) {
+    .tdapp {
+        width: 84%;
+        /* height:5rem; */
+        /* max-width: 31.175rem; */
+        /* background: #fff ; */
+        margin: 2rem auto 2rem;
+        padding: 1.6rem 1.6rem 1.6rem;
+    }
+}
+
+@media only screen and (max-width:480px){
+    .to-do-btn{
+        padding: 10px 12px;
+    }
+
+}

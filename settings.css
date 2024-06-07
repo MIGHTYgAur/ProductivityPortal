@@ -41,3 +41,7 @@
 .form-container button[type="submit"]:active {
     background-color: #DDD;
 }
+
+@media only screen and (max-width:480px){
+    
+}
