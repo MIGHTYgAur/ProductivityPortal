@@ -7,7 +7,7 @@ var shortBreakLength=5;
 var longBreakLength=15;
 
 
-const playButton=document.getElementById("play-btn")
+const playButton=document.getElementById("play-btn");
 const resetButton=document.getElementById("reset-btn");
 
 function handleFormSubmission(event){
@@ -17,6 +17,7 @@ function handleFormSubmission(event){
     longBreakLength = parseInt(document.getElementById("long-break-length").value);
     hideForm();
     pomodoro();
+    
  }
  
 function pomodoro(){
@@ -64,8 +65,9 @@ function pauseToResume(){
         playButton.src="/public/resume1.png";
     }
     else{
-        startTimer();
         playButton.src="/public/pause1.png";
+        startTimer();
+        
     }
 }
 function resetTimer(){
@@ -138,21 +140,26 @@ function longBreak(){
         clearInterval(timer);
 }
 
+
 //form handling part
 const showFormBtn = document.getElementById("settings");
 const formContainer = document.getElementById("form-container");
-
-let click=0;
-showFormBtn.addEventListener("click", function() {
+var click=0;
+function hideForm(){
+    formContainer.style.display = "none";
+}
+showFormBtn.addEventListener("click", function(e) {
     click=click+1;
-    if(click === 2){
-        formContainer.style.display = "none";
+    if(click == 2){
+        console.log("donee");
+        hideForm();
         click=0;
+        document.getElementById("settings-form").reset();
     }
+    else{
     formContainer.style.display = "block";
+    }
 });
-
-
 pomodoro();
 playButton.addEventListener("click",pauseToResume);
 resetButton.addEventListener("click",resetTimer);
